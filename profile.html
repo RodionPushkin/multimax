@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MultiMAX</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+        <!-- <script src="/assets/js/jquery-3.6.0.js"></script> -->
+        <!-- <script srs=""></script> -->
+    </head>
+<body data-page="cart">
+    <div class="page page-light">
+        <div class="wrapper">
+            <header id="header" class="header">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <ul class="nav">
+                        <li data-menuanchor="bots" class="nav-item"><a class="nav-link" href="#bots">bots</a></li>
+                        <li data-menuanchor="servers" class="nav-item"><a class="nav-link" href="#servers">servers</a>
+                        </li>
+                        <li data-menuanchor="about" class="nav-item"><a class="nav-link" href="#about">about</a>
+                        </li>
+                        <li data-menuanchor="main" class="nav-item" style="padding: 0px 20px 0px 20px;"><a
+                                href="#main"><img src="img/logo.svg" alt="Logo"></a></li>
+                        <li class="nav-item"><a
+                                style="color: darkorange;border: 0.5px solid white;padding: 10px;border-radius: 30px;"
+                                class="nav-link" href="">UserName</a></li>
+                        <li class="nav-item"><a class="" href=""><img src="img/cart.svg" alt=""></a></li>
+                        <li class="nav-item"><a class="nav-link" href="">en</a></li>
+                    </ul>
+                </nav>
+            </header>
+        <div  class="profile">
+            <div id="cart" class="wrapper">
+                <br>
+                <br>
+                <br>
+                    <div class="head">
+                        <nav class="navbar" role="navigation">
+                            <ul class="nav-2"> 
+                                <li class="nav-item"><a class="nav-link" style="border: 0.5px solid white;padding: 10px 20px;border-radius: 30px;" href="">My bots</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/cart.html">Cart</a></li>
+                                <!-- <li class="nav-item"><a class="nav-link" href="/balance.html">Balance</a></li> -->
+                                <li class="nav-item"><a class="nav-link" href="/referal.html">Referal</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="profile-menu">
+                        <div class="menu">
+                            <p >Name</p>
+                            <p >Status</p>
+                            <p >Date of order</p>
+                            <p >Download link</p>
+                            <p >Guide link</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item" style="margin-left: 10px; margin-top: 20px;"><a class="nav-link"
+                                style="color: white;border: 0.5px solid darkorange;padding: 10px 20px ;border-radius: 30px;"
+                                href="#popup_support">Support</a></li>
+                    </ul>
+                </nav>
+                <footer class=cellar>
+                    <div id=spacer></div>
+                        <div class=block>
+                            © multimax 2022 All rights reserved
+                            </div>
+                </footer>
+            </div>
+            
+        </div>
+
+    </div>
+    
+</div>
+<div id="popup_support" class="popup">
+    <a href="#header" class="popup__area"></a>
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#header" class="popup__close">X</a>
+            <div class="popup__title">Tell us about your problem</div>
+            <div class="popup__form">
+                <form action="send.php" method="post">
+                        <p style="margin-top: 0px;margin-bottom: 0px;">Choose a topic</p>
+                            
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                            <div class="select">
+                                <div class="select__head">My problem is...</div>
+                                <ul class="select__list">
+                                    <li class="select__item">Replenishment of the balance</li>
+                                    <li class="select__item">Order payment</li>
+                                    <li class="select__item">Using a bot</li>
+                                    <li class="select__item">Server usage</li>
+                                    <li class="select__item">Another problem</li>
+                                </ul>
+                            </div>
+                            <script  src="/js/script.js"></script>
+                            <div class="support-page__input-sup">
+                                <p style="margin-top: 0px;margin-bottom: 0px;">Describe your problem</p>
+                                <textarea cols="32" name="message" rows="5"></textarea>
+                            </div>
+                    
+                </form>
+            </div>
+                        <div class="btn__sub">
+                            <button type="submit" class="btn-submit">Submit</button>
+                        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

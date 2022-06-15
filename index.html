@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiMAX</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+
+<body>
+    <div class="page page-light">
+        <div class="wrapper">
+            <header id="header" class="header">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <ul class="nav">
+                        <li data-menuanchor="bots" class="nav-item"><a class="nav-link" href="#bots">bots</a></li>
+                        <li data-menuanchor="servers" class="nav-item"><a class="nav-link" href="#servers">servers</a>
+                        </li>
+                        <li data-menuanchor="about" class="nav-item"><a class="nav-link" href="#about">about</a>
+                        </li>
+                        <li data-menuanchor="main" class="nav-item" style="padding: 0px 20px 0px 20px;"><a
+                                href="#main"><img src="img/logo.svg" alt="Logo"></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#popup">log in</a></li>
+                        <li class="nav-item"><button class="cart" href=""><img src="img/cart.svg" alt="">
+                                <div calss="shop-numbers">
+                                    <div>0</div>
+                                </div>
+                            </button></li>
+                        <li class="nav-item"><a class="nav-link" href="">en</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div id="main" class="main">
+                <img src="img/Logo grey.png" alt="" style="padding-top: 95px;">
+                <div class="main-item text">
+                    <h1>Multimax</h1>
+                    <p class="text-description">Our site has everything you need for quick and easy earnings on
+                        cryptocurrency. Welcome to the world of easy crypto!</p>
+                </div>
+            </div>
+            <div class="page">
+                <div id="bots" class="wrapper">
+                    <br>
+                    <br>
+                    <h2 class="title-h2">Our bots</h2>
+
+
+                    <div id="goods" class="product">
+
+                    </div>
+                    <span id="dots" style="opacity: 0;">...</span>
+                    <div id="more">
+                        <div id="goods" class="product">
+                            <div class="product-item">
+                                <p class="item__name">Bot</p>
+                                <p class="product-description">This bot is required to perform repetitive work in the
+                                    Dolphin browser when using multi-accounts</p>
+                                <p class="item__price" style="margin-top: 20px;margin-bottom: 20px;">280$</p>
+                                <button data-art="0013" class="btn-price">buy</button>
+                            </div>
+                            <div class="product-item">
+                                <p class="item__name">Bot2</p>
+                                <p class="product-description">This bot is required to perform repetitive work in the
+                                    Dolphin browser when using multi-accounts</p>
+                                <p class="item__price" style="margin-top: 20px;margin-bottom: 20px;">150$</p>
+                                <button data-art="0014" class="btn-price">buy</button>
+                            </div>
+                            <div class="product-item">
+                                <p class="item__name">Bot3</p>
+                                <p class="product-description">This bot is required to perform repetitive work in the
+                                    Dolphin browser when using multi-accounts</p>
+                                <p class="item__price" style="margin-top: 20px;margin-bottom: 20px;">450$</p>
+                                <button data-art="0015" class="btn-price">buy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div style="display: flex; justify-content: center;">
+                        <a onclick="myFunction()" id="myBtn" class="arrow">more<img src="img/Arrow 1.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div id="servers" class="pageservers" style="padding-top: 35px">
+                <br>
+                <h2 class="title-h2">Ready servers</h2>
+                <div class="product">
+                    <div class="product-item">
+                        <p class="product-title">Server#1</p>
+                        <p class="product-description">This server is required to perform repetitive work in the Dolphin
+                            browser when using multi-accounts</p>
+                        <!-- <p class="product-price">100$</p> -->
+                        <p class="product-soon">Coming soon</p>
+                        <!-- <a class="btn-price" href="">buy</a> -->
+                    </div>
+                    <div class="product-item">
+                        <p class="product-title">Server #2</p>
+                        <p class="product-description">This server is required to perform repetitive work in the Dolphin
+                            browser when using multi-accounts</p>
+                        <!-- <p class="product-price">100$</p> -->
+                        <p class="product-soon">Coming soon</p>
+                        <!-- <a class="btn-price" href="">buy</a> -->
+                    </div>
+                    <div class="product-item">
+                        <p class="product-title">Server #3</p>
+                        <p class="product-description">This server is required to perform repetitive work in the Dolphin
+                            browser when using multi-accounts</p>
+                        <!-- <p class="product-price">100$</p> -->
+                        <p class="product-soon">Coming soon</p>
+                        <!-- <a class="btn-price" href="">buy</a> -->
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div style="display: flex; justify-content: space-between; max-width: 600px;">
+                    <a class="btn-submit" href="#popup_build"> Build server</a>
+                    <a class="arrow" href="">more<img src="img/Arrow 1.svg" alt=""></a>
+                </div>
+            </div>
+            <div id="about" class="pageabout" style="padding-top: 35px">
+                <div class="about">
+                    <h2 class="title-h2">About</h2>
+                    <p class="about-description">Nunc porttitor nisl donec risus lobortis aliquam neque tortor. Eget
+                        nulla neque, lorem nunc orci, neque sit lacus malesuada. Eget venenatis consectetur at facilisi
+                        pellentesque magnis amet. Nam at pretium non felis quam tortor, blandit praesent. Odio varius
+                        eget hendrerit ipsum pulvinar vel, pellentesque ornare. Eu faucibus facilisis quam facilisis
+                        sit. Sed rhoncus vehicula quis tellus nec. Luctus nec facilisi facilisis lorem erat.</p>
+                    <p class="about-description">Bibendum sed libero maecenas vitae erat donec leo. Id dapibus blandit
+                        ut integer. Condimentum enim, leo facilisi felis varius auctor etiam lacus. Tellus eu auctor
+                        amet facilisis tellus quisque arcu tortor. Curabitur mauris pellentesque fusce nec. Purus orci,
+                        sed mattis ut. Condimentum in nulla purus mi ut. Sed sit pretium vitae pretium integer sagittis
+                        iaculis hendrerit ultricies. Elit, non nullam ullamcorper massa ultrices vulputate varius
+                        dictum. Tincidunt tempus lectus sagittis diam in eget. Sodales quam non facilisis orci at est.
+                        Molestie placerat arcu diam enim.</p>
+                    <p class="about-description">Nunc porttitor nisl donec risus lobortis aliquam neque tortor. Eget
+                        nulla neque, lorem nunc orci, neque sit lacus malesuada. Eget venenatis consectetur at facilisi
+                        pellentesque magnis amet. Nam at pretium non felis quam tortor, blandit praesent. Odio varius
+                        eget hendrerit ipsum pulvinar vel, pellentesque ornare. Eu faucibus facilisis quam facilisis
+                        sit. Sed rhoncus vehicula quis tellus nec. Luctus nec facilisi facilisis lorem erat.</p>
+                </div>
+            </div>
+            <footer class=cellar>
+                <div id=spacer></div>
+                <div class=block>
+                    © multimax 2022 All rights reserved
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <a href="#header" class="popup__area"></a>
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close">X</a>
+                <div class="popup__title">Don`t have account? <a class="reg" href="#popup_2">Register now</a></div>
+                <div class="popup__form">
+                    <form action="#" method="post" enctype="multipart/form-data"></form>
+                    <div class="form-item">
+                        <input type="text" name="email" placeholder="Enter your e-mail" required>
+                    </div>
+                    <br>
+                    <div>
+                        <input type="password" name="usrpass" value="" placeholder="Enter your password" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_2" class="popup">
+        <a href="#header" class="popup__area"></a>
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close">X</a>
+                <div class="popup__title">Registr now</div>
+                <div class="popup__form">
+                    <form action="#" method="post" enctype="multipart/form-data"></form>
+                    <div class="form-item">
+                        <input type="text" name="email" placeholder="Enter your e-mail" required>
+                    </div>
+                    <div>
+                        <input type="password" name="usrpass" value="" placeholder="Enter your password" required>
+                    </div>
+                    <div>
+                        <input type="password" name="usrpass" value="" placeholder="Enter your password" required>
+                    </div>
+                    <a class="btn-submit" href="">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popup_build" class="popup">
+        <a href="#header" class="popup__area"></a>
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close">X</a>
+                <div class="popup__title">No suitable server? Leave a request to add a server.</div>
+                <div class="popup__form">
+                    <form action="send.php" method="post">
+                        <p style="margin-top: 0px;margin-bottom: 0px;">Choose direction</p>
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        <div class="select">
+                            <div class="select__head">Тeed server for..</div>
+                            <ul class="select__list">
+                                <li class="select__item">P2E games</li>
+                                <li class="select__item">Testnet</li>
+                                <li class="select__item">Mainnet</li>
+                                <li class="select__item">NFT</li>
+                                <li class="select__item">Another</li>
+                            </ul>
+                        </div>
+                        <script src="/js/script.js"></script>
+                        <div class="support-page__input-sup">
+                            <p style="margin-top: 0px;margin-bottom: 0px;">Describe your wishes</p>
+                            <textarea cols="32" name="message" rows="5"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="btn__sub">
+                    <button type="submit" class="btn-submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <script src="/js/script.js"></script> -->
+    <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "less";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+</body>
+
+</html>
