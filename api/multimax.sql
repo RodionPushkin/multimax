@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 15 2022 г., 23:12
+-- Время создания: Июн 17 2022 г., 21:03
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.1.33
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `feedback` (
   `ID` int NOT NULL,
   `IDUser` int NOT NULL,
-  `Url` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Message` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ISDeleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -77,6 +77,7 @@ CREATE TABLE `product` (
   `Title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Description` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Price` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `Active` tinyint(1) NOT NULL DEFAULT '1',
   `Discount` decimal(10,2) DEFAULT '0.00',
   `GuideLink` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -88,16 +89,16 @@ CREATE TABLE `product` (
 -- Дамп данных таблицы `product`
 --
 
-INSERT INTO `product` (`ID`, `IDType`, `PreviewImage`, `Title`, `Description`, `Price`, `Discount`, `GuideLink`, `Created`, `Edited`, `ISDeleted`) VALUES
-(1, 1, NULL, 'CLICKER1', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '180.00', '0.00', NULL, '2022-06-15 20:11:29', NULL, 0),
-(2, 1, NULL, 'CLICKER2', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '250.00', '0.00', NULL, '2022-06-15 20:11:29', NULL, 0),
-(3, 1, NULL, 'CLICKER3', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '350.00', '0.00', NULL, '2022-06-15 20:11:29', NULL, 0),
-(4, 1, NULL, 'CLICKER4', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '280.00', '0.00', NULL, '2022-06-15 20:11:29', NULL, 0),
-(5, 1, NULL, 'CLICKER5', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '150.00', '0.00', NULL, '2022-06-15 20:11:29', NULL, 0),
-(6, 1, NULL, 'CLICKER6', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '450.00', '0.00', NULL, '2022-06-15 20:11:29', NULL, 0),
-(7, 1, NULL, 'BOT', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '280.00', '0.00', NULL, '2022-06-15 20:11:29', NULL, 0),
-(8, 1, NULL, 'BOT2', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '150.00', '0.00', NULL, '2022-06-15 20:11:29', NULL, 0),
-(9, 1, NULL, 'BOT3', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '450.00', '0.00', NULL, '2022-06-15 20:11:29', NULL, 0);
+INSERT INTO `product` (`ID`, `IDType`, `PreviewImage`, `Title`, `Description`, `Price`, `Active`, `Discount`, `GuideLink`, `Created`, `Edited`, `ISDeleted`) VALUES
+(1, 1, NULL, 'CLICKER1', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '180.00', 1, '0.00', NULL, '2022-06-17 14:28:59', NULL, 0),
+(2, 1, NULL, 'CLICKER2', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '250.00', 1, '0.00', NULL, '2022-06-17 14:28:59', NULL, 0),
+(3, 1, NULL, 'CLICKER3', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '350.00', 1, '0.00', NULL, '2022-06-17 14:28:59', NULL, 0),
+(4, 1, NULL, 'CLICKER4', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '280.00', 1, '0.00', NULL, '2022-06-17 14:28:59', NULL, 0),
+(5, 1, NULL, 'CLICKER5', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '150.00', 1, '0.00', NULL, '2022-06-17 14:28:59', NULL, 0),
+(6, 1, NULL, 'CLICKER6', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '450.00', 1, '0.00', NULL, '2022-06-17 14:28:59', NULL, 0),
+(7, 1, NULL, 'BOT', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '280.00', 1, '0.00', NULL, '2022-06-17 14:28:59', NULL, 0),
+(8, 1, NULL, 'BOT2', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '150.00', 1, '0.00', NULL, '2022-06-17 14:28:59', NULL, 0),
+(9, 1, NULL, 'BOT3', 'This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts', '450.00', 1, '0.00', NULL, '2022-06-17 14:28:59', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -168,6 +169,13 @@ CREATE TABLE `user` (
   `Edited` timestamp NULL DEFAULT NULL,
   `ISDeleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`ID`, `Email`, `Token`, `Access`, `IDReferal`, `Created`, `Edited`, `ISDeleted`) VALUES
+(1, 'admin@email.com', 'abf5142836a4bef816a18766423773c5', 4, NULL, '2022-06-17 15:03:40', '2022-06-17 15:39:54', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -279,7 +287,7 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

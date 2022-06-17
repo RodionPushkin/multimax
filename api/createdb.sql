@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `Product` (
     Title VARCHAR(50) NOT NULL,
     Description VARCHAR(1000),
     Price DECIMAL(10,2) NOT NULL DEFAULT 0,
+    Active BOOLEAN NOT NULL DEFAULT 1,
     Discount DECIMAL(10,2) DEFAULT 0,
     GuideLink VARCHAR(1000),
     Created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -68,7 +69,7 @@ ALTER TABLE `User` ADD CONSTRAINT FOREIGN KEY(IDReferal) REFERENCES `Referal` (I
 CREATE TABLE IF NOT EXISTS `Feedback` (
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     IDUser INT NOT NULL,
-    Url VARCHAR(1000) NOT NULL,
+    Message VARCHAR(1000) NOT NULL,
     ISDeleted BOOLEAN NOT NULL DEFAULT 0,
     FOREIGN KEY (IDUser) REFERENCES `User` (ID)
 );
@@ -83,20 +84,3 @@ INSERT INTO `Product` (IDType,Title,Description,Price,Discount) VALUES
 (1,'BOT','This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts',280,DEFAULT),
 (1,'BOT2','This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts',150,DEFAULT),
 (1,'BOT3','This bot is required to perform repetitive work in the Dolphin browser when using multi-accounts',450,DEFAULT);
--- запрос на авторизацию
-SELECT * FROM `User` WHERE Token = 'тут должен быть токен';
--- запрос добавление пользователя
-INSERT INTO `User` (Email,Token) VALUES ('тут должен быть имейл','тут должен быть токен');
--- запрос добавление товара
-INSERT INTO `Product` (IDType,Title,Description,Price,Discount) VALUES (DEFAULT,'название',DEFAULT,10.2,DEFAULT);
--- запрос на получение пользователей
-SELECT * FROM `User` ORDER BY ID LIMIT 100;
--- запрос на получение товаров
-SELECT
-P.ID AS ID,
-T.Title AS Type,
-P.Title AS Title,
-P.Description AS Description,
-P.Price AS Price,
-P.Discount AS Discount
-FROM `Product` P LEFT JOIN `Type` T ON T.ID = P.IDType WHERE P.ISDeleted = 0 ORDER BY ID LIMIT 100;
