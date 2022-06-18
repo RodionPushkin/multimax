@@ -3,14 +3,21 @@ include __DIR__.'/../db_controller.php';
 include __DIR__.'/../access_controller.php';
 $error = [];
 $result = null;
-if(Access($_COOKIE["token"]))
+if(Access($_COOKIE["token"],4))
 {
-    $limit = (int) $_POST['user'];
-    if(empty($limit))
+    if(!empty($_POST['id']))
     {
-        $limit = 0;
+        $result = R::getAll('SELECT * FROM `order` WHERE `ISDeleted` = 0 AND ID ='.$_POST['id']);
     }
-    $result = R::getAll('SELECT * FROM `order` WHERE `ISDeleted` = 0 ORDER BY ID LIMIT '.$limit.',100');
+    else
+    {
+        $limit = (int) $_POST['user'];
+        if(empty($limit))
+        {
+            $limit = 0;
+        }
+        $result = R::getAll('SELECT * FROM `order` WHERE `ISDeleted` = 0 ORDER BY ID LIMIT '.$limit.',100');
+    }
 }else
 {
     array_push($error,"недостаточно прав!");

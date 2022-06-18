@@ -4,7 +4,7 @@ include __DIR__.'/../access_controller.php';
 $error = [];
 $result = null;
 if(!empty($_POST['id'])){
-    if(Access($_COOKIE["token"]))
+    if(Access($_COOKIE["token"],4))
     {
         $id = (int) $_POST['id'];
         $item = R::load('status',$id);

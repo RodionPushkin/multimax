@@ -5,7 +5,7 @@ $error = [];
 $result = null;
 if(!empty($_POST['id'])){
     $id = (int) $_POST['id'];
-    if(Access($_COOKIE["token"]))
+    if(Access($_COOKIE["token"],4))
     {
         $item = R::load('feedback',$id);
         if(!empty($item))

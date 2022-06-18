@@ -29,4 +29,7 @@ function Auth($token){
 function GenerateToken($email,$password){
     return md5(md5($email).'token'.md5($password).'multimax');
 }
+function GenerateLink(){
+    // должна возвращать url на скачивание, у меня даже догадок нет, как это сделать
+}
 ?>

@@ -3,7 +3,7 @@ include __DIR__.'/../db_controller.php';
 include __DIR__.'/../access_controller.php';
 $error = [];
 $result = null;
-if(Access($_COOKIE["token"]))
+if(Access($_COOKIE["token"],4))
 {
     if (!empty($_POST['url']) && !empty($_POST['iduser']))
     {
