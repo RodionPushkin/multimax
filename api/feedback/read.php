@@ -28,6 +28,6 @@ if(empty($error))
 }
 else
 {
-    echo json_encode(['error'=>$error[0],'httpcode'=>400, 'time'=>date('Y-m-d H:i:s', time())]);
+    echo json_encode(['error'=>$error[0],'httpcode'=>400, 'time'=>date('Y-m-d H:i:s', time()), 'da'=>$_COOKIE]);
 }
 ?>

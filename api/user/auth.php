@@ -20,7 +20,7 @@ else
         $user = R::findOne('user',' token = ? ', [GenerateToken($_POST['email'],$_POST['password'])]);
         if(!empty($user))
         {
-            setcookie("token",GenerateToken($_POST['email'],$_POST['password']),time()+3600*24);
+            setcookie("token",GenerateToken($_POST['email'],$_POST['password']),time()+3600*24, "/");
             $result = ['token'=>GenerateToken($_POST['email'],$_POST['password']),'access'=>json_decode($user)->Access];
         }else
         {

@@ -8,17 +8,24 @@ if(!empty($_COOKIE['token']))
     array_push($error,"пользователь уже авторизирован!");
 }
 else if(!empty($_POST['email']) && !empty($_POST['password'])){
-    $user = R::dispense('user');
-    $user->email = $_POST['email'];
-    $user->token = GenerateToken($_POST['email'],$_POST['password']);
-    if(!empty($_POST['referal']))
+    if(!empty(R::findOne('user',' email = ? ', [$_POST['email']])))
     {
-        $id = (int) $_POST['referal'];
-        $user->idreferal = $id;
+        array_push($error,"пользователь уже зарегистрирован!");
     }
-    R::store($user);
-    setcookie("token",GenerateToken($_POST['email'],$_POST['password']),time()+3600*24);
-    $result = ['token'=>GenerateToken($_POST['email'],$_POST['password'])];
+    else
+    {
+        $user = R::dispense('user');
+        $user->email = $_POST['email'];
+        $user->token = GenerateToken($_POST['email'],$_POST['password']);
+        if(!empty($_POST['referal']))
+        {
+            $id = (int) $_POST['referal'];
+            $user->idreferal = $id;
+        }
+        R::store($user);
+        setcookie("token",GenerateToken($_POST['email'],$_POST['password']),time()+3600*24, "/");
+        $result = ['token'=>GenerateToken($_POST['email'],$_POST['password'])];
+    }
 }
 else
 {

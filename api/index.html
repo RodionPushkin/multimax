@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>тест апи</title>
+</head>
+<body>
+    <h1>Test api все результаты в консоли</h1>
+    <h2>Авторизация</h2>
+    <button onclick="dropTokenCookie()">выйти из аккаунта</button>
+    <form id="authForm" onsubmit="event.preventDefault(); return auth();">
+        <p>права: 4<br>почта: admin@email.com<br>пароль: adminadmin</p>
+        <p>права: 0<br>почта: email<br>пароль: password</p>
+        <input type="text" placeholder="email">
+        <input type="text" placeholder="password">
+        <button type="submit">войти</button>
+    </form>
+    <h2>Регистриция</h2>
+    <form id="signUpForm" onsubmit="event.preventDefault(); return signUp();">
+        <input type="text" placeholder="email">
+        <input type="text" placeholder="password">
+        <button type="submit">войти</button>
+    </form>
+    <h2>Read data</h2>
+    <h3>feedback</h3>
+    <button onclick="readFeedback()">загрузить feedback</button>
+    <h3>order</h3>
+    <button onclick="readOrder()">загрузить order</button>
+    <h3>product</h3>
+    <button onclick="readProduct()">загрузить product</button>
+    <h3>referal</h3>
+    <button onclick="readReferal()">загрузить referal</button>
+    <h3>status</h3>
+    <button onclick="readStatus()">загрузить status</button>
+    <h3>type</h3>
+    <button onclick="readType()">загрузить type</button>
+    <h3>user</h3>
+    <button onclick="readUser()">загрузить user</button>
+    <script>
+        const readFeedback = ()=>{
+            fetch('/api/feedback/read.php').then((response) => {return response.json();})
+                .then((data) => {
+                    console.log("feedback",data);
+            });
+        }
+        const readOrder = ()=>{
+            fetch('/api/order/read.php').then((response) => {return response.json();})
+                .then((data) => {
+                    console.log("order",data);
+                });
+        }
+        const readProduct = ()=>{
+            fetch('/api/product/read.php').then((response) => {return response.json();})
+                .then((data) => {
+                    console.log("product",data);
+                });
+        }
+        const readReferal = ()=>{
+            fetch('/api/referal/read.php').then((response) => {return response.json();})
+                .then((data) => {
+                    console.log("referal",data);
+                });
+        }
+        const readStatus = ()=>{
+            fetch('/api/status/read.php').then((response) => {return response.json();})
+                .then((data) => {
+                    console.log("status",data);
+                });
+        }
+        const readType = ()=>{
+            fetch('/api/type/read.php').then((response) => {return response.json();})
+                .then((data) => {
+                    console.log("type",data);
+                });
+        }
+        const readUser = ()=>{
+            fetch('/api/user/read.php').then((response) => {return response.json();})
+                .then((data) => {
+                    console.log("user",data);
+                });
+        }
+        const signUp = ()=>{
+            const form = document.getElementById('signUpForm');
+            const inputs = form.querySelectorAll('input');
+            const formData = new FormData();
+            formData.append('email',inputs[0].value);
+            formData.append('password',inputs[1].value);
+            fetch('/api/user/create.php',{
+                method: 'POST',
+                body: formData})
+                .then((response) => {return response.json();})
+                .then((data) => {
+                    if(data?.error) console.log(data?.error)
+                    if(data?.data) console.log(data?.data)
+                });
+        }
+        const auth = ()=>{
+            const form = document.getElementById('authForm');
+            const inputs = form.querySelectorAll('input');
+            const formData = new FormData();
+            formData.append('email',inputs[0].value);
+            formData.append('password',inputs[1].value);
+            fetch('/api/user/auth.php',{
+                method: 'POST',
+                body: formData})
+                .then((response) => {return response.json();})
+                .then((data) => {
+                    if(data?.error) console.log(data?.error)
+                    if(data?.data) console.log(data?.data)
+                });
+        }
+        const dropTokenCookie = ()=>{
+            fetch('/api/user/exit.php')
+                .then((response) => {return response.json();})
+                .then((data) => {});
+        }
+        //вход по куке в аккаунт
+        auth();
+    </script>
+</body>
+</html>
